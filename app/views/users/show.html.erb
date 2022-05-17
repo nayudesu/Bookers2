@@ -1,6 +1,10 @@
 <div>
   <h3><%= @user.name %></h3>
   <%= image_tag user.get_profile_image(80,80) %>
+  <% if @user.id == current_user %>
+  <p><%= link_to"プロフィール編集",edit_user_path(@user) %></p>
+  <% end %>
+
 </div>
 
 <!-- ユーザーの投稿したbooks一覧 -->
@@ -9,8 +13,8 @@
 <div>
   <%= link_to book_path(book.id) do %>
    <div class="field">
-    <%= f.label :Name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :Title %><br />
+    <%= f.text_field :title %>
   </div>
 
   <div class="field">

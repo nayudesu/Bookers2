@@ -8,5 +8,5 @@
 </div>
 
 <% if @book.user == current_user %> <!--ログインしているユーザーの場合ーー＞
-    <%= link_to "Destory", book_path(@book), method: :delete %>　
+  <%= link_to "Destory", book_path(@book), method: :delete %>　 
 <% end %>　

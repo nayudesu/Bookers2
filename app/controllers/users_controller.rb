@@ -10,6 +10,12 @@ class UsersController < ApplicationController
     @user.update
     redirect_to user_path
   end 
+  
+  def index
+    @users = User.all
+    #@user = User.find(params[:id])
+
+  end 
 
 
   def edit

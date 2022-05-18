@@ -1,9 +1,13 @@
 <h2>Books</h2>
+
+
+
 <% @books.each do |book| %>
+  <p></p>
+  <!--%= image_tag @user.get_profile_image(80,80) %>-->
+  <p>Title</p> <!--trを使う？-->
+  <%= book.title %>
+  <p>Opinion</p>
+  <%= book.body %>
 
-
-<div>
-  <p>Title<%= book.title %></p> <!--trを使う？-->
-  <p>Opinion<%= book.opinion %></p>
-</div>
 <% end %>

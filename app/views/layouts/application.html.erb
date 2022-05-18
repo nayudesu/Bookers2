@@ -13,31 +13,33 @@
   <body>
    <header>
     <% if user_signed_in? %>
+    <ul class="navbar-collapse">
       <li>
-        <%= link_to "Home",user_path(current_user.id) %>
+        <i class="fas fa-home"></i><%= link_to "Home",user_path(current_user.id) %>
       </li>
       <li>
-        <%= link_to "User",users_path %>
+        <i class="fas fa-users"></i><%= link_to "User",users_path %>
       </li>
       <li>
-        <%= link_to "Book",books_path %>
+        <i class="fas fa-book-open"></i><%= link_to "Book",books_path %>
       </li>
       <li>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        <i class="fas fa-sign-out-alt"></i><%= link_to "Log out", destroy_user_session_path, method: :delete %>
       </li>
     <% else %>
       <li>
-        <%= link_to "Home",root_path %>
+        <i class="fas fa-home"></i><%= link_to "Home",root_path %>
       </li>
       <li>
-        <%= link_to "About",homes_about_path %>
+        <i class="fas fa-link"><%= link_to "About",homes_about_path %>
       </li>
       <li>
-        <%= link_to "Sign up", new_user_registration_path %>
+        <i class="fas fa-user-plus"></i><%= link_to "Sign up", new_user_registration_path %>
       </li>
       <li>
-        <%= link_to "Log in", new_user_session_path %>
+        <i class="fas fa-sign-in-alt"></i><%= link_to "Log in", new_user_session_path %>
       </li>
+    </ul>  
     <% end %>
     
     

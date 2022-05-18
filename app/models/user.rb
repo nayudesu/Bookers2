@@ -6,12 +6,12 @@ class User < ApplicationRecord
          
   has_many :books, dependent: :destroy
   
-  has_one_attached :profile_image
-  
   validates :name, length: { in: 2..20 } #２〜２０文字
   validates :introduction, length: {maximum: 150}#最大２００字まで,{}追加？
 
-  
+  has_one_attached :profile_image
+
+
   def get_profile_image(width, height) #profile_imageという名前でActiveStorageでプロ画像を保存できるように
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpeg')

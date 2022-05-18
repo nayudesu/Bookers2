@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users    #devise を使用する際に URL として users を含むことを示す
   
   resources :books, only: [:new, :index, :show, :destroy, :create]
-  resources :users, only: [:show, :update, :edit]
+  resources :users, only: [:show, :update, :edit, :index]
 
   root to: 'homes#top'
   get 'homes/about' => "homes#about"

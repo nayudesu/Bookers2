@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def show #変数指定する
     @user = User.find(params[:id])
     @books = @user.books  #アソシエーション済み
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:usesr).permit(:name,:post_image)
+    params.require(:usesr).permit(:name,:profile_image)
   end 
   
 end

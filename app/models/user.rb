@@ -8,8 +8,8 @@ class User < ApplicationRecord
   
   has_one_attached :profile_image
   
-  validates :name,{presence: true,length: { in: 2..20 }} #２〜２０文字
-  validates :introduction,{presence: true, lengh: {maximum: 150}}#最大２００字まで,{}追加？
+  validates :name, length: { in: 2..20 } #２〜２０文字
+  validates :introduction, length: {maximum: 150}#最大２００字まで,{}追加？
 
   
   def get_profile_image(width, height) #profile_imageという名前でActiveStorageでプロ画像を保存できるように

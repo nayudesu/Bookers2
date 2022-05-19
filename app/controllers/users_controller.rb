@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def show #変数指定する
     @user = User.find(params[:id])
     @books = @user.books  #アソシエーション済み
+    
   end
   
   def update
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
   
   def index
     @users = User.all
-    #@user = User.find(params[:id])
+    @user = current_user
 
   end 
 

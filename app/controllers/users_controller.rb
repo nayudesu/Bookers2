@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
-  def show #変数指定する
-    @user = User.find(params[:id])
+  def show 
+    @user = current_user
     @books = @user.books  #アソシエーション済み
     
   end

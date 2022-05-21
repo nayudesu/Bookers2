@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   
   def show 
     @user = current_user
-    @books = @user.books  #アソシエーション済み
-    
+    @books = Book.find(params[:id])  #アソシエーション済み
+    @book = Book.new
   end
   
   def update

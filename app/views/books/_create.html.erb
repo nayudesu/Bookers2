@@ -1,13 +1,13 @@
 <h2>New book</h2>
 
-<%= form_with model: book do |f| %>
+<%= form_with model: Book.new do |f| %>
  <div class="field">
     <%= f.label :Title %><br />
     <%= f.text_field :title %>
   </div>
 
   <div class="field">
-     <%= f.label :Opinion %><br />
+     <%= f.label :body do %>Opinion<% end %><br />
      <%= f.text_area :body %>
   </div>
   <%= f.submit 'Create Book' %>

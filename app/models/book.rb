@@ -3,6 +3,6 @@ class Book < ApplicationRecord
   belongs_to :user
   
   validates :title, presence: true
-  validates :body, length: {maximum: 200}#最大２００字まで,{}追加
+  validates :body, presence: true, length: {maximum: 200}#最大２００字まで,{}追加
   
 end

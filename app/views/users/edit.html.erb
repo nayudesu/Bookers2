@@ -1,8 +1,9 @@
 <div class="container">
-   <div class="row">
-     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto"></div>
-   
-   <h2>User info</h2>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 col-md-offset-2">
+      
+      <h2>User info</h2>
 
       <% if @user.errors.any? %>
         <%= @user.errors.count %>error prohibited this obj from being saved:
@@ -15,19 +16,19 @@
 
         <%= form_with model:@user do |f| %>
       <div class ="form_group">
-      <label for="user_Name">Name</label>
-        <%= f.text_field:name,autofocus: true,id:"userName",placeholder:"name"%>
+        <label for="user_Name">Name</label>
+        <div><%= f.text_field:name,autofocus: true,id:"userName",placeholder:"name"%></div>
       </div>
       <div class ="form_group">
-      <label for="user_image">Image</label>
-        <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>  
+        <label for="user_image">Image</label>
+        <div><%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %></div>
       </div>
       <div class ="form_group">
-      <label for="user_introduction">Introduction</label>
-        <%= f.text_area:introduction,autofocus: true,id:"userIntroduction",placeholder:"introduction"%>
+        <label for="user_introduction">Introduction</label>
+        <div><%= f.text_area:introduction,autofocus: true,id:"userIntroduction",placeholder:"introduction"%></div>
       </div>
 
-      <%= f.submit "Update User" %>
+      <%= f.submit "Update User", class:"btn btn-secondary" %>
       <% end %>
      </div>
   </div>

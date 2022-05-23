@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
   
   validates :name, uniqueness: true, length: { in: 2..20 } #２〜２０文字
-  validates :introduction, length: {maximum: 50}#最大２００字まで,{}追加？
+  validates :introduction, length: {maximum: 50}#最大５０字まで,{}追加？
 
   has_one_attached :profile_image
 

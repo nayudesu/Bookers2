@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+  before_action :ensure_user, only: [:edit, :update]
   
   def show 
-    @user = current_user
+    @user = User.find(params[:id])
     @book = Book.new
   end
   
@@ -32,4 +33,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name,:profile_image,:introduction)
   end 
   
+  def ensure_user
+    @user=User.find(params[:id])
+   redirect_to user_path(current_user.id) unless @user.id == current_user.id
+  end 
 end
